@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev:server": "nodemon --watch build --exec \"node ./dist/server.js\"",
     "start": "node ./dist/server",
-    "build": "webpack",
+    "build": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

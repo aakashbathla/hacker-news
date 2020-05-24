@@ -9,6 +9,7 @@ export default ({ body, title }) => {
       
       <body>
         <div id="root">${body}</div>
+        <script src="./client.js"></script>
       </body>
     </html>
   `;
