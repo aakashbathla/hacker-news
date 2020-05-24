@@ -7,7 +7,7 @@ const Nav = () => {
       <span>Hacker News</span>
       <span>
         <a href="top">Top |</a>
-        <a href="new">New</a>
+        <a href="new">aakash</a>
       </span>
     </div>
   );
