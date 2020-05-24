@@ -13,7 +13,7 @@ server.get("/", (req, res) => {
   res.send(
     template({
       body: component,
-      title: "FROM THE SERVER",
+      title: "Hacker News App",
     })
   );
 });

@@ -1,8 +1,9 @@
 import React from "react";
+import Nav from "./components/Nav/Nav";
 const App = () => {
   return (
-    <div className="col-lg-6 btn btn-primary Button">
-      aakash My Name is Aakash Bathla
+    <div className="col-xs-12">
+      <Nav />
     </div>
   );
 };
