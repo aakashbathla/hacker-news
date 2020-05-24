@@ -6,7 +6,7 @@
   "scripts": {
     "dev:server": "nodemon --watch build --exec \"node ./dist/server.js\"",
     "start": "node ./dist/server",
-    "build": "webpack --watch",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
