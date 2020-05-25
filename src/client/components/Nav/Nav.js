@@ -14,10 +14,7 @@ const Nav = () => {
       <div className="nav__mobile--padding">
         <span className="nav__links ml25">
           <a className="active" href="top">
-            Top |
-          </a>
-          <a className="ml10" href="new">
-            New
+            Top
           </a>
         </span>
       </div>

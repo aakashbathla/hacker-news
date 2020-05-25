@@ -1,4 +1,5 @@
 import { useEffect, useReducer } from "react";
+
 import {
   FETCH_LOAD,
   FETCH_SUCCESS,
@@ -60,36 +61,44 @@ const fetchDataReducer = (state, { type, payload = null }) => {
   }
 };
 
-const fetchDataApi = (searchUrl) => {
-  // page and query
+const fetchDataComp = (searchUrl) => {
   const [state, dispatch] = useReducer(fetchDataReducer, INITIAL_STATE);
 
-  const fetchData = async (page = 0) => {
+  const fetchData = (page = 0) => {
     const preExisting =
       state.results[state.query] && state.results[state.query].page + 1;
     try {
-      const results = await axios.get(
-        `${searchUrl}${state.query}&tags=story&page=${
-          preExisting ? preExisting : page
-        }&hitsPerPage=${DEFAULT_HITS}`
-      );
-      dispatch({
-        type: FETCH_SUCCESS,
-        payload: {
-          hits: results.data.hits,
-          page: preExisting ? preExisting : page,
-        },
-      });
+      console.log("aakash");
+      let results;
+      axios
+        .get(
+          `${searchUrl}${state.query}&tags=story&page=${
+            preExisting ? preExisting : page
+          }&hitsPerPage=${DEFAULT_HITS}`
+        )
+        .then((resp) => {
+          results = resp;
+          console.log(results.data);
+          dispatch({
+            type: FETCH_SUCCESS,
+            payload: {
+              hits: results.data.hits,
+              page: preExisting ? preExisting : page,
+            },
+          });
+        });
     } catch (error) {
+      console.log(error);
       dispatch({ type: FETCH_FAIL });
     }
   };
 
   const paginate = () => {
+    console.log("pagination");
     const { results, query } = state;
     let updatedPage = results[query].page + 1;
 
-    fetchData(updatedPage);
+    fetchData();
   };
 
   useEffect(() => {
@@ -99,4 +108,4 @@ const fetchDataApi = (searchUrl) => {
   return { ...state, paginate };
 };
 
-export default fetchDataApi;
+export default fetchDataComp;

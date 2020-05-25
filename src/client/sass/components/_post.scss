@@ -2,25 +2,46 @@
   padding-top: 30px;
   background-color: $table-odd-background;
   margin: 0 auto;
+  &__button {
+    color: $primary-color;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    &:hover {
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
   &__item {
     &--no_of_comments,
     &--no_of_upvotes {
       flex-basis: 10%;
+      text-align: right;
       @include for-phone-only {
         font-size: 12px;
       }
     }
+    &--no_of_upvotes {
+      text-align: right;
+    }
     &--title {
       font-weight: bold;
-      font-size: 20px;
-      flex-basis: 50%;
+      font-size: 17px;
       @include for-phone-only {
         font-size: 12px;
+      }
+      @include for-tab-only {
+        flex-basis: 50%;
       }
     }
     &--author {
       min-height: 30px;
-      flex-basis: 50%;
+      @include for-tab-only {
+        flex-basis: 50%;
+      }
       @include for-phone-only {
         font-size: 10px;
       }
@@ -34,7 +55,7 @@
       cursor: pointer;
     }
     &--container {
-      padding: 10px 0;
+      padding: 2px 0;
       &:nth-of-type(odd) {
         background-color: $table-odd-background;
       }
