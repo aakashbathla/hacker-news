@@ -13,7 +13,7 @@ const Post = () => {
     <div className="post">
       <div className="post__item">
         <PostItem />
-        <div>My name is ganesh negi</div>
+        <div>My name is aakash bathla</div>
       </div>
     </div>
   );
