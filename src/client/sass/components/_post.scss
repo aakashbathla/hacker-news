@@ -3,20 +3,27 @@
   background-color: $table-odd-background;
   margin: 0 auto;
   &__item {
-    &--no_of_comments {
-      flex-basis: 5%;
-    }
+    &--no_of_comments,
     &--no_of_upvotes {
-      flex-basis: 5%;
+      flex-basis: 10%;
+      @include for-phone-only {
+        font-size: 12px;
+      }
     }
     &--title {
       font-weight: bold;
       font-size: 20px;
-      flex-basis: 30%;
+      flex-basis: 50%;
+      @include for-phone-only {
+        font-size: 12px;
+      }
     }
     &--author {
       min-height: 30px;
       flex-basis: 50%;
+      @include for-phone-only {
+        font-size: 10px;
+      }
     }
     &--upvote {
       width: 0;
@@ -27,6 +34,7 @@
       cursor: pointer;
     }
     &--container {
+      padding: 10px 0;
       &:nth-of-type(odd) {
         background-color: $table-odd-background;
       }
@@ -36,6 +44,17 @@
     }
     &--link {
       cursor: pointer;
+    }
+    &--direction--mobile {
+      @include for-tab-only {
+        flex-direction: column;
+        width: 50%;
+      }
+    }
+    &--width--desktop {
+      @include for-tablet-landscape-up {
+        width: 100%;
+      }
     }
   }
 }
