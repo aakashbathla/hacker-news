@@ -12,7 +12,7 @@ const INITIAL_STATE = {
   error: false,
   results: {},
   loading: true,
-  query: "react",
+  query: "",
 };
 
 const DEFAULT_HITS = 20;

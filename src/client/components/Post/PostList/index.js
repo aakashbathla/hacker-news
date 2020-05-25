@@ -8,12 +8,17 @@ const searchUrl = "https://hn.algolia.com/api/v1/search?query=";
 const Post = () => {
   const { query, results, loading, error, paginate } = fetchDataApi(searchUrl);
   fetchDataApi(searchUrl);
-  console.log(results);
+  results[""] &&
+    results[""].hits.map((hit) => {
+      console.log(hit);
+    });
   return (
     <div className="post">
       <div className="post__item">
-        <PostItem />
-        <div>My name is aakash bathla</div>
+        {results[""] &&
+          results[""].hits.map((hit) => (
+            <PostItem key={hit.objectID} {...hit} />
+          ))}
       </div>
     </div>
   );

@@ -3,12 +3,20 @@
   background-color: $table-odd-background;
   margin: 0 auto;
   &__item {
+    &--no_of_comments {
+      flex-basis: 5%;
+    }
+    &--no_of_upvotes {
+      flex-basis: 5%;
+    }
     &--title {
       font-weight: bold;
       font-size: 20px;
+      flex-basis: 40%;
     }
     &--author {
-      height: 30px;
+      min-height: 30px;
+      flex-basis: 40%;
     }
     &--upvote {
       width: 0;
@@ -25,6 +33,9 @@
       &:nth-of-type(even) {
         background-color: $table-even-background;
       }
+    }
+    &--link {
+      cursor: pointer;
     }
   }
 }
