@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 const UnVote = ({ votePost, objectId }) => {
   return (
     <a
+      className="un-vote-link secondary-color"
       onClick={(e) => {
         e.preventDefault();
         votePost({
@@ -11,7 +12,6 @@ const UnVote = ({ votePost, objectId }) => {
           voted: false,
         });
       }}
-      className="un-vote-link secondary-color"
     >
       unvote
     </a>

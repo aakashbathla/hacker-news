@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 const UpVote = ({ votePost, objectId }) => {
   return (
     <a
+      className="up-vote-link"
       onClick={(e) => {
         e.preventDefault();
         votePost({
@@ -11,7 +12,6 @@ const UpVote = ({ votePost, objectId }) => {
           voted: true,
         });
       }}
-      className="up-vote-link"
     >
       <div className="up-vote-arrow" />
     </a>
