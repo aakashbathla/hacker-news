@@ -1,4 +1,4 @@
-const feedListState = {
+const postListState = {
   isFetching: false,
   data: {
     hits: [],
@@ -8,4 +8,4 @@ const feedListState = {
   error: null,
 };
 
-export default feedListState;
+export default postListState;

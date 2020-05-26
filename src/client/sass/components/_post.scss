@@ -3,13 +3,16 @@
   background-color: $table-odd-background;
   margin: 0 auto;
   &__button {
-    color: $primary-color;
-    text-decoration: none;
+    color: $primary-color !important;
+    text-decoration: none !important;
     font-size: 14px;
     font-weight: bold;
     padding: 20px;
     display: flex;
+    width: 100px;
+    margin: 0 auto;
     justify-content: center;
+    cursor: pointer;
     &:hover {
       text-decoration: none;
       color: $primary-color;

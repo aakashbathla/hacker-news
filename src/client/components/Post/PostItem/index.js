@@ -1,5 +1,6 @@
 import React from "react";
 import { Time } from "../../Utils/Time";
+import HidePost from "../../HidePost/index";
 const PostItem = ({
   author,
   created_at_i,
@@ -23,10 +24,7 @@ const PostItem = ({
         <div className="post__item--title ml10">{title}</div>
         <div className="post__item--author ml10">
           ({urlName}) by <b>{author}</b> {created_at} [
-          <a className="post__item--link">
-            <b>hide</b>
-          </a>
-          ]
+          <HidePost objectId={objectID} />]
         </div>
       </div>
     </div>

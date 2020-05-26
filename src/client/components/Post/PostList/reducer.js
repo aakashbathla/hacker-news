@@ -97,7 +97,6 @@ const fetchDataComp = (searchUrl) => {
     console.log("pagination");
     const { results, query } = state;
     let updatedPage = results[query].page + 1;
-
     fetchData();
   };
 

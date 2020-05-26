@@ -51,7 +51,7 @@ const commonConfig = {
 
 const serverConfig = {
   ...commonConfig,
-  entry: "./src/server.js",
+  entry: "./src/server/app.js",
   target: "node",
   output: {
     path: path.resolve(__dirname, "dist"),

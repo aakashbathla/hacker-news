@@ -1,28 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PostItem from "../PostItem/index";
 import Loading from "../../Loading";
+import LoadMore from "../../LoadMore/index";
 import fetchDataComp from "./reducer";
 
 const searchUrl = "https://hn.algolia.com/api/v1/search?query=";
 
-const Post = () => {
-  const { results, loading, error, paginate } = fetchDataComp(searchUrl);
+const Post = ({ postListData, fetchPostListData }) => {
+  useEffect(() => {
+    fetchPostListData();
+  }, []);
   return (
     <div className="post">
       <div className="post__item">
-        {!results[""] || loading ? (
+        {!postListData ? (
           <Loading />
         ) : (
           <div>
-            {results[""] &&
-              results[""].hits.map((hit) => (
+            {postListData &&
+              postListData.hits.map((hit) => (
                 <PostItem key={hit.objectID} {...hit} />
               ))}
-            {results[""] && results[""].hits && (
-              <a href="" onClick={paginate} className="post__button">
-                More
-              </a>
-            )}
+            {postListData && postListData.hits && <LoadMore />}
           </div>
         )}
       </div>
