@@ -18,9 +18,9 @@ const Post = ({ postListData, fetchPostListData }) => {
     votedData = updateUpVoteInPostData(filteredData);
   }
   const postList = votedData ? votedData.hits : undefined;
-  useEffect(() => {
-    fetchPostListData();
-  }, []);
+  // useEffect(() => {
+  //   fetchPostListData();
+  // }, []);
   return (
     <div className="post">
       <div className="post__item">
