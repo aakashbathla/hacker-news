@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 const commonConfig = {
-  mode: "development",
+  mode: "production",
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
