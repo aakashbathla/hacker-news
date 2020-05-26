@@ -47,6 +47,5 @@ export function* loadPostListSaga(action) {
 }
 
 export default function* postListSaga() {
-  console.log("2");
   yield takeLatest(FETCH_POST_LIST_DATA, loadPostListSaga);
 }

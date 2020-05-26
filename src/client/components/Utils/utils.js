@@ -1,6 +1,6 @@
 import { LocalStorageUtil } from "../../utils/localStorage";
 import { HIDE_POST_KEY } from "../HidePost/constants";
-// import { VOTE_FEED_KEY } from "../../atoms/Vote/constants";
+import { VOTE_POST_KEY } from "../Vote/constants";
 
 export const removePost = (postListState, objectID) => {
   const { data, ...others } = postListState;
@@ -21,46 +21,46 @@ export const removePost = (postListState, objectID) => {
   };
 };
 
-// export const filterFeedDataWithHiddenFeeds = (postListData) => {
-//   const storage = new LocalStorageUtil();
+export const filterPostDataWithHiddenPosts = (postListData) => {
+  const storage = new LocalStorageUtil();
 
-//   const hiddenFeedIds = JSON.parse(storage.getItem(HIDE_FEED_KEY) || "[]");
+  const hiddenPostIds = JSON.parse(storage.getItem(HIDE_POST_KEY) || "[]");
 
-//   if (hiddenFeedIds.length) {
-//     const { hits } = postListData;
-//     const filteredHits = hits.filter((hit) => {
-//       return hiddenFeedIds.indexOf(hit.objectID) === -1;
-//     });
+  if (hiddenPostIds.length) {
+    const { hits } = postListData;
+    const filteredHits = hits.filter((hit) => {
+      return hiddenPostIds.indexOf(hit.objectID) === -1;
+    });
 
-//     return {
-//       ...postListData,
-//       hits: filteredHits,
-//     };
-//   }
-//   return postListData;
-// };
+    return {
+      ...postListData,
+      hits: filteredHits,
+    };
+  }
+  return postListData;
+};
 
-// export const updateUpVoteInFeedData = (postListData) => {
-//   const storage = new LocalStorageUtil();
+export const updateUpVoteInPostData = (postListData) => {
+  const storage = new LocalStorageUtil();
 
-//   const votedFeedIds = JSON.parse(storage.getItem(VOTE_FEED_KEY) || "[]");
+  const votedPostIds = JSON.parse(storage.getItem(VOTE_POST_KEY) || "[]");
 
-//   if (votedFeedIds.length) {
-//     const { hits } = postListData;
-//     const votedHits = hits.map((hit) => {
-//       const cloneHit = { ...hit };
+  if (votedPostIds.length) {
+    const { hits } = postListData;
+    const votedHits = hits.map((hit) => {
+      const cloneHit = { ...hit };
 
-//       if (votedFeedIds.indexOf(cloneHit.objectID) > -1) {
-//         cloneHit.voted = true;
-//       }
+      if (votedPostIds.indexOf(cloneHit.objectID) > -1) {
+        cloneHit.voted = true;
+      }
 
-//       return cloneHit;
-//     });
+      return cloneHit;
+    });
 
-//     return {
-//       ...postListData,
-//       hits: votedHits,
-//     };
-//   }
-//   return postListData;
-// };
+    return {
+      ...postListData,
+      hits: votedHits,
+    };
+  }
+  return postListData;
+};

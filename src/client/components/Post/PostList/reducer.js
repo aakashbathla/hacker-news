@@ -68,7 +68,6 @@ const fetchDataComp = (searchUrl) => {
     const preExisting =
       state.results[state.query] && state.results[state.query].page + 1;
     try {
-      console.log("aakash");
       let results;
       axios
         .get(
@@ -78,7 +77,6 @@ const fetchDataComp = (searchUrl) => {
         )
         .then((resp) => {
           results = resp;
-          console.log(results.data);
           dispatch({
             type: FETCH_SUCCESS,
             payload: {
@@ -94,7 +92,6 @@ const fetchDataComp = (searchUrl) => {
   };
 
   const paginate = () => {
-    console.log("pagination");
     const { results, query } = state;
     let updatedPage = results[query].page + 1;
     fetchData();

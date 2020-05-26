@@ -10,6 +10,7 @@ import postListInitialState from "../../commons/initialState/postList.state";
 import { HIDE_POST } from "../HidePost/constants";
 
 import { removePost } from "../Utils/utils";
+import { VOTE_POST } from "../Vote/constants";
 
 const initialState = postListInitialState;
 
@@ -38,11 +39,11 @@ const postListReducer = (state = initialState, { type, data, error }) => {
     case HIDE_POST:
       return removePost(state, data);
 
-    // case VOTE_FEED:
-    //   return {
-    //     ...state,
-    //     data: { ...state.data },
-    //   };
+    case VOTE_POST:
+      return {
+        ...state,
+        data: { ...state.data },
+      };
 
     default:
       return state;

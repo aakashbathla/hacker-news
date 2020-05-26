@@ -13,7 +13,6 @@ export const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = (dispatch) => {
   return {
     fetchPostListData: () => {
-      console.log("1");
       dispatch(fetchPostListData());
     },
   };

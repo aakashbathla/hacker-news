@@ -12,7 +12,6 @@ delete window.__STATE__;
 // reproduce the store used to render the page on server
 const store = configureStore(state);
 
-console.log(store);
 window.onload = () => {
   ReactDOM.hydrate(
     <Provider store={store}>
