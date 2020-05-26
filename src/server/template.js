@@ -6,6 +6,7 @@ export default function renderFullPage(html, preloadedState) {
         <title>Hacker News App</title>
         <meta name="description" content="Hacker News is a community started by Paul Graham for sharing "Anything that good hackers would find interesting. That includes more than hacking and startups. If you had to reduce it to a sentence, the answer might be: anything that gratifies one's intellectual curiosity."">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="./main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
       </head>
