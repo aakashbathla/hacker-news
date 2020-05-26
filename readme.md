@@ -26,16 +26,16 @@ To make build:-
 
     npm run build
 
-To run application with SSR on node:-
+To run application :-
 
     npm start
 
 # CI
 
-Docker and Jenkins is being used for Continuous Integration.
+Docker, Jenkins and Amazon EC2 is being used for Deployment.
 
-http://3.212.200.166:8080/
+Jenkins URL: http://3.212.200.166:8080/
 
 # Project is deployed on
 
-http://3.212.200.166:30000/
+Site URL: http://3.212.200.166:30000/
