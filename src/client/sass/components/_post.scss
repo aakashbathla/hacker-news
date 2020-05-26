@@ -79,6 +79,7 @@
     &--width--desktop {
       @include for-tablet-landscape-up {
         width: 100%;
+        flex-wrap: wrap;
       }
     }
   }
